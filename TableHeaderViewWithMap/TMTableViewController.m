@@ -21,7 +21,12 @@
     [super viewDidLoad];
     [self.tableView setDelegate:self];
     
-    mapViewFrame = CGRectMake(0, 0, self.tableView.frame.size.width, self.tableView.frame.size.height/3);
+    _tableHeaderViewMinSize = 300;
+    _tableHeaderViewMaxSize = 450;
+    _tableHeaderViewResizeResistence = 40;
+    
+    mapViewFrame = CGRectMake(self.tableView.frame.origin.x, self.tableView.frame.origin.y,
+                              self.tableView.frame.size.width, _tableHeaderViewMinSize);
     
     tableHeaderView = [[UIView alloc]initWithFrame:mapViewFrame];
     [tableHeaderView setBackgroundColor:[UIColor grayColor]];
@@ -43,36 +48,33 @@
     CGRect mapViewFrameOnDrag = mapViewFrame;
     mapViewFrameOnDrag.origin.y = scrollView.contentOffset.y;
     
-    if (scrollView.contentOffset.y < -30
-        & tableHeaderView.frame.size.height != self.tableView.frame.size.height/1.2) {
+    if (scrollView.contentOffset.y < -_tableHeaderViewResizeResistence
+        & tableHeaderView.frame.size.height != _tableHeaderViewMaxSize) {
         
-        NSLog(@"TableHeaderView.height: %f | TableView.height: %f",
-              tableHeaderView.frame.size.height, self.tableView.frame.size.height/1.2);
-        
-        NSLog(@"MINOR 0 scroll: %f",scrollView.contentOffset.y);
-        
-        mapViewFrameOnDrag.size.height = self.tableView.frame.size.height/1.2;
+        mapViewFrameOnDrag.size.height = _tableHeaderViewMaxSize;
         
         [tableHeaderView setFrame:mapViewFrameOnDrag];
         [tableHeaderView setBackgroundColor:[UIColor greenColor]];
         
         [self.tableView setTableHeaderView:tableHeaderView];
-    }else if (scrollView.contentOffset.y > 30
-              & tableHeaderView.frame.size.height > self.tableView.frame.size.height/3){
+
         
-        NSLog(@"MAJOR 0 scroll: %f",scrollView.contentOffset.y);
+    }else if (scrollView.contentOffset.y > _tableHeaderViewResizeResistence
+              & tableHeaderView.frame.size.height > _tableHeaderViewMinSize){
         
-        //mapViewFrameOnDrag.size.height = self.tableView.frame.size.height/3;
+        mapViewFrameOnDrag.size.height = _tableHeaderViewMinSize;
         
-        [tableHeaderView setFrame:mapViewFrame];
+        [tableHeaderView setFrame:mapViewFrameOnDrag];
         [tableHeaderView setBackgroundColor:[UIColor redColor]];
         
+        [self.tableView.tableHeaderView setFrame:mapViewFrameOnDrag];
         [self.tableView setTableHeaderView:tableHeaderView];
         
     }else{
-        
+
         
     }
+    
 }
 
 

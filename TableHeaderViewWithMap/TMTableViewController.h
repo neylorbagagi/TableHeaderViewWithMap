@@ -10,4 +10,8 @@
 
 @interface TMTableViewController : UITableViewController
 
+@property float tableHeaderViewMinSize;
+@property float tableHeaderViewMaxSize;
+@property float tableHeaderViewResizeResistence;
+
 @end
