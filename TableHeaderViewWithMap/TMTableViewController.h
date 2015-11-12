@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  TMTableViewController.h
 //  TableHeaderViewWithMap
 //
 //  Created by Neylor Bagagi on 11/12/15.
@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
-
+@interface TMTableViewController : UITableViewController
 
 @end
-

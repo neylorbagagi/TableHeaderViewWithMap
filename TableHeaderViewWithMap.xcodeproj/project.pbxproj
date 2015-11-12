@@ -9,12 +9,12 @@
 /* Begin PBXBuildFile section */
 		F014D2521BF4DD9900CDD335 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F014D2511BF4DD9900CDD335 /* main.m */; };
 		F014D2551BF4DD9900CDD335 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F014D2541BF4DD9900CDD335 /* AppDelegate.m */; };
-		F014D2581BF4DD9900CDD335 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F014D2571BF4DD9900CDD335 /* ViewController.m */; };
 		F014D25B1BF4DD9900CDD335 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F014D2591BF4DD9900CDD335 /* Main.storyboard */; };
 		F014D25D1BF4DD9900CDD335 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F014D25C1BF4DD9900CDD335 /* Assets.xcassets */; };
 		F014D2601BF4DD9900CDD335 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F014D25E1BF4DD9900CDD335 /* LaunchScreen.storyboard */; };
 		F014D26B1BF4DD9A00CDD335 /* TableHeaderViewWithMapTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F014D26A1BF4DD9A00CDD335 /* TableHeaderViewWithMapTests.m */; };
 		F014D2761BF4DD9A00CDD335 /* TableHeaderViewWithMapUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = F014D2751BF4DD9A00CDD335 /* TableHeaderViewWithMapUITests.m */; };
+		F014D2851BF4DDEC00CDD335 /* TMTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F014D2841BF4DDEC00CDD335 /* TMTableViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,8 +39,6 @@
 		F014D2511BF4DD9900CDD335 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		F014D2531BF4DD9900CDD335 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		F014D2541BF4DD9900CDD335 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		F014D2561BF4DD9900CDD335 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		F014D2571BF4DD9900CDD335 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		F014D25A1BF4DD9900CDD335 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F014D25C1BF4DD9900CDD335 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F014D25F1BF4DD9900CDD335 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -51,6 +49,8 @@
 		F014D2711BF4DD9A00CDD335 /* TableHeaderViewWithMapUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TableHeaderViewWithMapUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F014D2751BF4DD9A00CDD335 /* TableHeaderViewWithMapUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TableHeaderViewWithMapUITests.m; sourceTree = "<group>"; };
 		F014D2771BF4DD9A00CDD335 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F014D2831BF4DDEC00CDD335 /* TMTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMTableViewController.h; sourceTree = "<group>"; };
+		F014D2841BF4DDEC00CDD335 /* TMTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMTableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,8 +103,8 @@
 			children = (
 				F014D2531BF4DD9900CDD335 /* AppDelegate.h */,
 				F014D2541BF4DD9900CDD335 /* AppDelegate.m */,
-				F014D2561BF4DD9900CDD335 /* ViewController.h */,
-				F014D2571BF4DD9900CDD335 /* ViewController.m */,
+				F014D2831BF4DDEC00CDD335 /* TMTableViewController.h */,
+				F014D2841BF4DDEC00CDD335 /* TMTableViewController.m */,
 				F014D2591BF4DD9900CDD335 /* Main.storyboard */,
 				F014D25C1BF4DD9900CDD335 /* Assets.xcassets */,
 				F014D25E1BF4DD9900CDD335 /* LaunchScreen.storyboard */,
@@ -207,6 +207,7 @@
 				TargetAttributes = {
 					F014D24C1BF4DD9900CDD335 = {
 						CreatedOnToolsVersion = 7.1.1;
+						DevelopmentTeam = WDU3U6PS84;
 					};
 					F014D2651BF4DD9A00CDD335 = {
 						CreatedOnToolsVersion = 7.1.1;
@@ -270,8 +271,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F014D2581BF4DD9900CDD335 /* ViewController.m in Sources */,
 				F014D2551BF4DD9900CDD335 /* AppDelegate.m in Sources */,
+				F014D2851BF4DDEC00CDD335 /* TMTableViewController.m in Sources */,
 				F014D2521BF4DD9900CDD335 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -413,7 +414,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = TableHeaderViewWithMap/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.tiwolf.TableHeaderViewWithMap;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -424,7 +427,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = TableHeaderViewWithMap/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.tiwolf.TableHeaderViewWithMap;
 				PRODUCT_NAME = "$(TARGET_NAME)";
