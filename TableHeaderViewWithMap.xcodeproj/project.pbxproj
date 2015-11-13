@@ -15,6 +15,7 @@
 		F014D26B1BF4DD9A00CDD335 /* TableHeaderViewWithMapTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F014D26A1BF4DD9A00CDD335 /* TableHeaderViewWithMapTests.m */; };
 		F014D2761BF4DD9A00CDD335 /* TableHeaderViewWithMapUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = F014D2751BF4DD9A00CDD335 /* TableHeaderViewWithMapUITests.m */; };
 		F014D2851BF4DDEC00CDD335 /* TMTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F014D2841BF4DDEC00CDD335 /* TMTableViewController.m */; };
+		F08E45461BF6705500E98D6D /* TMTableHeaderViewResizable.m in Sources */ = {isa = PBXBuildFile; fileRef = F08E45451BF6705500E98D6D /* TMTableHeaderViewResizable.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,8 @@
 		F014D2771BF4DD9A00CDD335 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F014D2831BF4DDEC00CDD335 /* TMTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMTableViewController.h; sourceTree = "<group>"; };
 		F014D2841BF4DDEC00CDD335 /* TMTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMTableViewController.m; sourceTree = "<group>"; };
+		F08E45441BF6705500E98D6D /* TMTableHeaderViewResizable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMTableHeaderViewResizable.h; sourceTree = "<group>"; };
+		F08E45451BF6705500E98D6D /* TMTableHeaderViewResizable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMTableHeaderViewResizable.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +108,8 @@
 				F014D2541BF4DD9900CDD335 /* AppDelegate.m */,
 				F014D2831BF4DDEC00CDD335 /* TMTableViewController.h */,
 				F014D2841BF4DDEC00CDD335 /* TMTableViewController.m */,
+				F08E45441BF6705500E98D6D /* TMTableHeaderViewResizable.h */,
+				F08E45451BF6705500E98D6D /* TMTableHeaderViewResizable.m */,
 				F014D2591BF4DD9900CDD335 /* Main.storyboard */,
 				F014D25C1BF4DD9900CDD335 /* Assets.xcassets */,
 				F014D25E1BF4DD9900CDD335 /* LaunchScreen.storyboard */,
@@ -272,6 +277,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F014D2551BF4DD9900CDD335 /* AppDelegate.m in Sources */,
+				F08E45461BF6705500E98D6D /* TMTableHeaderViewResizable.m in Sources */,
 				F014D2851BF4DDEC00CDD335 /* TMTableViewController.m in Sources */,
 				F014D2521BF4DD9900CDD335 /* main.m in Sources */,
 			);

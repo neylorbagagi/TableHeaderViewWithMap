@@ -7,6 +7,7 @@
 //
 
 #import "TMTableViewController.h"
+#import "TMTableHeaderViewResizable.h"
 
 @interface TMTableViewController () <UIScrollViewDelegate>
 
@@ -46,6 +47,19 @@
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView{
     
+    // ISSUE: "tableHeaderViewResizeOnScroll" W R O N G  N A M E  F O R  M E T H O D  A N D  C L A S S E
+    // ISSUE: "tableHeaderViewResizeOnScroll" M E T H O D  S H O U L D  R E T U R N  A  T A B L E V I E W  ? ? ?
+    
+    /*  E X A M P L E  W I T H  M E T H O D  I M P L A M E N T A T I O N
+    TMTableHeaderViewResizable *TableHeaderViewResizable = [[TMTableHeaderViewResizable alloc]init];
+    self.tableView = [TableHeaderViewResizable tableHeaderViewResizeOnScroll:tableHeaderView
+                                                  tableHeaderViewMinimumSize:_tableHeaderViewMinSize
+                                                  tableHeaderViewMaximumSize:_tableHeaderViewMaxSize
+                                                          tableViewContainer:self.tableView
+                                                             tableViewScroll:scrollView];
+     */
+    
+    // E X A M P L E  W I T H  S T R U C T U R E D  I M P L A M E N T A T I O N
     CGRect mapViewFrameOnDrag = mapViewFrame;
     mapViewFrameOnDrag.origin.y = scrollView.contentOffset.y;
     
@@ -79,6 +93,7 @@
     }
     
 }
+
 
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
