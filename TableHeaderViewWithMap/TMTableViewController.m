@@ -23,7 +23,7 @@
     
     _tableHeaderViewMinSize = 300;
     _tableHeaderViewMaxSize = 450;
-    _tableHeaderViewResizeResistence = 40;
+    _tableHeaderViewResizeResistence = 50;
     
     mapViewFrame = CGRectMake(self.tableView.frame.origin.x, self.tableView.frame.origin.y,
                               self.tableView.frame.size.width, _tableHeaderViewMinSize);
@@ -50,28 +50,38 @@
     
     if (scrollView.contentOffset.y < -_tableHeaderViewResizeResistence
         & tableHeaderView.frame.size.height != _tableHeaderViewMaxSize) {
-        
+
         mapViewFrameOnDrag.size.height = _tableHeaderViewMaxSize;
+
+        [UIView transitionWithView:tableHeaderView duration:2.0f options:UIViewAnimationOptionAllowAnimatedContent
+                        animations:^{
+                            [tableHeaderView setBackgroundColor:[UIColor greenColor]];
+                        } completion:nil];
         
         [tableHeaderView setFrame:mapViewFrameOnDrag];
-        [tableHeaderView setBackgroundColor:[UIColor greenColor]];
-        
         [self.tableView setTableHeaderView:tableHeaderView];
+        [self.tableView.tableHeaderView setFrame:mapViewFrameOnDrag];
 
+        
         
     }else if (scrollView.contentOffset.y > _tableHeaderViewResizeResistence
               & tableHeaderView.frame.size.height > _tableHeaderViewMinSize){
         
         mapViewFrameOnDrag.size.height = _tableHeaderViewMinSize;
         
-        [tableHeaderView setFrame:mapViewFrameOnDrag];
-        [tableHeaderView setBackgroundColor:[UIColor redColor]];
+        [UIView transitionWithView:tableHeaderView duration:2.0f options:UIViewAnimationOptionAllowAnimatedContent
+                        animations:^{
+                            [tableHeaderView setBackgroundColor:[UIColor redColor]];
+                        } completion:nil];
+
         
-        [self.tableView.tableHeaderView setFrame:mapViewFrameOnDrag];
+        [tableHeaderView setFrame:mapViewFrameOnDrag];
         [self.tableView setTableHeaderView:tableHeaderView];
+        [self.tableView.tableHeaderView setFrame:mapViewFrameOnDrag];
+
         
     }else{
-
+        // aqui provavelmente vai o trecho que fixa a tableHeaderView no topo
         
     }
     
