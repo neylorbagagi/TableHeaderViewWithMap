@@ -22,8 +22,7 @@
     [self.tableView setDelegate:self];
     
     _tableHeaderViewMinSize = 300;
-    _tableHeaderViewMaxSize = 450;
-    _tableHeaderViewResizeResistence = 50;
+    _tableHeaderViewMaxSize = 500;
     
     mapViewFrame = CGRectMake(self.tableView.frame.origin.x, self.tableView.frame.origin.y,
                               self.tableView.frame.size.width, _tableHeaderViewMinSize);
@@ -34,6 +33,8 @@
     [self.tableView setTableHeaderView:tableHeaderView];
     
 }
+
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -48,32 +49,24 @@
     CGRect mapViewFrameOnDrag = mapViewFrame;
     mapViewFrameOnDrag.origin.y = scrollView.contentOffset.y;
     
-    if (scrollView.contentOffset.y < -_tableHeaderViewResizeResistence
-        & tableHeaderView.frame.size.height != _tableHeaderViewMaxSize) {
+    if (scrollView.contentOffset.y < 0
+        & tableHeaderView.frame.size.height <= _tableHeaderViewMaxSize) {
 
-        mapViewFrameOnDrag.size.height = _tableHeaderViewMaxSize;
-
-        [UIView transitionWithView:tableHeaderView duration:2.0f options:UIViewAnimationOptionAllowAnimatedContent
-                        animations:^{
-                            [tableHeaderView setBackgroundColor:[UIColor greenColor]];
-                        } completion:nil];
+        mapViewFrameOnDrag.size.height = (int)tableHeaderView.frame.size.height + (int)-scrollView.contentOffset.y;
         
         [tableHeaderView setFrame:mapViewFrameOnDrag];
         [self.tableView setTableHeaderView:tableHeaderView];
         [self.tableView.tableHeaderView setFrame:mapViewFrameOnDrag];
 
+        if (tableHeaderView.frame.size.height >= _tableHeaderViewMaxSize) {
+            [self.tableView setBounces:NO];
+        }
         
-        
-    }else if (scrollView.contentOffset.y > _tableHeaderViewResizeResistence
-              & tableHeaderView.frame.size.height > _tableHeaderViewMinSize){
-        
-        mapViewFrameOnDrag.size.height = _tableHeaderViewMinSize;
-        
-        [UIView transitionWithView:tableHeaderView duration:2.0f options:UIViewAnimationOptionAllowAnimatedContent
-                        animations:^{
-                            [tableHeaderView setBackgroundColor:[UIColor redColor]];
-                        } completion:nil];
-
+    }else if (scrollView.contentOffset.y > 0
+              & tableHeaderView.frame.size.height >= _tableHeaderViewMinSize){
+        [self.tableView setBounces:YES];
+    
+        mapViewFrameOnDrag.size.height = (int)tableHeaderView.frame.size.height - (int)scrollView.contentOffset.y;
         
         [tableHeaderView setFrame:mapViewFrameOnDrag];
         [self.tableView setTableHeaderView:tableHeaderView];
@@ -81,7 +74,7 @@
 
         
     }else{
-        // aqui provavelmente vai o trecho que fixa a tableHeaderView no topo
+        // exeptions
         
     }
     

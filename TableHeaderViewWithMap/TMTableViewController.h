@@ -7,12 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <CoreGraphics/CoreGraphics.h>
 
 @interface TMTableViewController : UITableViewController
 
 @property float tableHeaderViewMinSize;
 @property float tableHeaderViewMaxSize;
-@property float tableHeaderViewResizeResistence;
 
 @end

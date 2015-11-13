@@ -15,7 +15,6 @@
 		F014D26B1BF4DD9A00CDD335 /* TableHeaderViewWithMapTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F014D26A1BF4DD9A00CDD335 /* TableHeaderViewWithMapTests.m */; };
 		F014D2761BF4DD9A00CDD335 /* TableHeaderViewWithMapUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = F014D2751BF4DD9A00CDD335 /* TableHeaderViewWithMapUITests.m */; };
 		F014D2851BF4DDEC00CDD335 /* TMTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F014D2841BF4DDEC00CDD335 /* TMTableViewController.m */; };
-		F09166011BF50B8D00DC9A3E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F09166001BF50B8D00DC9A3E /* CoreGraphics.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,7 +51,6 @@
 		F014D2771BF4DD9A00CDD335 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F014D2831BF4DDEC00CDD335 /* TMTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMTableViewController.h; sourceTree = "<group>"; };
 		F014D2841BF4DDEC00CDD335 /* TMTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMTableViewController.m; sourceTree = "<group>"; };
-		F09166001BF50B8D00DC9A3E /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,7 +58,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F09166011BF50B8D00DC9A3E /* CoreGraphics.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -84,7 +81,6 @@
 		F014D2441BF4DD9900CDD335 = {
 			isa = PBXGroup;
 			children = (
-				F09166001BF50B8D00DC9A3E /* CoreGraphics.framework */,
 				F014D24F1BF4DD9900CDD335 /* TableHeaderViewWithMap */,
 				F014D2691BF4DD9A00CDD335 /* TableHeaderViewWithMapTests */,
 				F014D2741BF4DD9A00CDD335 /* TableHeaderViewWithMapUITests */,
